@@ -1,0 +1,163 @@
+﻿@using InnovaSchool.Helpers
+@using InnovaSchool.Models;
+
+@{
+    ViewBag.Title = "Solicitud de Cotización";
+}
+
+<div class="content-body">
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <div id="area_tabla" class="panel panel-default">
+        <div class="panel-heading">Listado de Adquisiciones</div>
+        <table id="a-table" class="table">
+            <thead>
+                <tr>
+                    <th>Sel</th>
+                    <th>Cod. Cotizacion</th>
+                    <th>Cod. Adquisicion</th>
+                    <th>Proveedor</th>
+                    <th>Fecha de Emision</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GD_SolicitudCotizacion item in ViewBag.ListSolicitudAdquisicion)
+                {
+                    <tr>
+                        <td><input type="radio" class="radio" name="optionsRadios" id="optionsRadios1" value="@item.CodSolCotizacion" onclick="javascript: Select(this);"></td>
+                        <td>@item.CodSolCotizacion</td>
+                        <td>@item.CodSolAdquisicion</td>
+                        <td>@item.RazonSocial</td>
+                        <td>@item.FechaSolicitud</td>
+                        <td id="tdEstadoSolicitud"><span id="spEstadoSolicitud">@item.EstadoSolicitud</span> </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <div>
+        @{
+            var xHidden = ViewBag.MostrarBotonesSolicitud;
+        }
+        <input type="button" value="Nuevo" id="btnNuevo" />
+        <input type="button" value="Consultar" id="btnConsultar" @(xHidden == false ? "disabled" : "") />
+        <input type="button" value="Modificar" id="btnModificar" @(xHidden == false ? "disabled" : "") />
+        <input type="button" value="Eliminar" id="btnEliminar" @(xHidden == false ? "disabled" : "") />
+        <input type="button" value="Actualizar Estado" id="btnEstado" @(xHidden == false ? "disabled" : "") />
+    </div>
+
+    <input type="hidden" id="hidCode" />
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnNuevo").click(function () {
+            window.location.href = '@Url.Action("SolicitudNueva", "SolCotizacion")';
+        });
+        $("#btnConsultar").click(function () {
+            var ruta = '@Url.Action("SolicitudConsultar", "SolCotizacion", new { strCodSolCotizacion = -1 })';
+            ruta = ruta.replace('-1', $("#hidCode").val());
+            window.location.href = ruta;
+        });
+        $("#btnModificar").click(function () {
+            var ruta = '@Url.Action("SolicitudModificar", "SolCotizacion", new { strCodSolCotizacion = -1 })';
+            ruta = ruta.replace('-1', $("#hidCode").val());
+            window.location.href = ruta;
+        });
+        $("#btnEliminar").click(function () {
+            var r = confirm("¿Esta seguro de Eliminar?");
+            if (r == true) {
+
+                var strUrl = '@Url.Action("SolicitudEliminar", "SolCotizacion")';
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: strUrl,
+                    data: { strCodSolCotizacion: $('#hidCode').val() },
+                    //  async: false,
+                    success: function (result) {
+                        window.location.href = '@Url.Action("SolicitudCotizacion", "SolCotizacion")';
+                    },
+                    error: function (ex) {
+                    }
+                });
+
+            } else {
+                console.log("Cancel!");
+            }
+        });
+
+        $("#btnEstado").click(function () {
+            var r = confirm("¿Esta seguro de Actualizar?");
+            if (r == true) {
+
+                var strUrl = '@Url.Action("SolicitudActualizarEstado", "SolCotizacion")';
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: strUrl,
+                    data: { strCodSolCotizacion: $('#hidCode').val() },
+                    //  async: false,
+                    success: function (result) {
+                        window.location.href = '@Url.Action("SolicitudCotizacion", "SolCotizacion")';
+                    },
+                    error: function (ex) {
+                    }
+                });
+
+            } else {
+                console.log("Cancel!");
+            }
+        });
+    });
+
+    function Select(obj) {
+        Code = obj.value;
+        console.log(Code);
+        $('#hidCode').val(Code);
+        if ($('#hidCode').val().length > 0) {
+            $('#btnConsultar').attr('disabled', false);
+            $('#btnModificar').attr('disabled', false);
+            $('#btnEliminar').attr('disabled', false);
+            $('#btnEstado').attr('disabled', false);
+
+            var strUrl = '@Url.Action("ObtenerEstadoCotizacion", "SolCotizacion")';
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: strUrl,
+                data: { strCodSolCotizacion: $('#hidCode').val() },
+                //  async: false,
+                success: function (result) {
+                    console.log(result.Respuesta);
+                    if (result.Respuesta == 'E') {
+                        console.log('Dehabilita');
+                        $('#btnModificar').attr('disabled', true);
+                        $('#btnEliminar').attr('disabled', true);
+                        $('#btnEstado').attr('disabled', true);
+                    }
+                    else {
+
+                        console.log('Habilita');
+                        $('#btnModificar').attr('disabled', false);
+                        $('#btnEliminar').attr('disabled', false);
+                        $('#btnEstado').attr('disabled', false);
+                    }
+                },
+                error: function (ex) {
+                }
+            });
+
+        }
+    }
+</script>
+
+
+
+

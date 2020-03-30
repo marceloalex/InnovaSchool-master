@@ -1,0 +1,95 @@
+﻿@using InnovaSchool.Models;
+
+<div class="content-body">
+    <h2>Modificar Solicitud de Cotización.</h2>
+    <br />
+    <div>
+        Solicitud: <span id="lblSolicitud"> @ViewBag.Solicitud</span>   <br />
+        Adquisicion: <span id="lblAdquisicion">@ViewBag.Adquisicion</span>   <br />
+        Proveedor: <span id="lblProveedor">@ViewBag.Proveedor</span>   <br />
+    </div>
+    <br />
+    <div class="panel panel-default">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sel</th>
+                    <th>Codigo Articulo</th>
+                    <th>Descripcion</th>
+                    <th>Marca</th>
+                    <th>Unidad de Medida</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GD_Articulos item in ViewBag.ListArticulosModificar)
+                {
+                    <tr>
+                        <td><input type="radio" class="radio" name="optionsRadios" id="optionsRadios1" value="@item.CodigoArticulo" onclick="javascript: SelectArticulo(this);"></td>
+                        <td>@item.CodigoArticulo</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Marca</td>
+                        <td>@item.UnidadMedida</td>
+                        <td>@item.Cantidad</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <div>
+        <input type="button" value="Eliminar" id="btnEliminarModificar" />
+        <input type="button" value="Cerrar" id="btnCerrarModificar" />
+
+    </div>
+    <input type="hidden" id="hidCodeArticulo" />
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+
+        $("#btnEliminarModificar").click(function () {
+            var r = confirm("¿Esta seguro de Eliminar?");
+            if (r == true) {
+
+                var strUrl = '@Url.Action("EliminarArticulo", "SolCotizacion")';
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: strUrl,
+                    data: { strCodSolCotizacion: $('#lblSolicitud').text(), strCodArticulo: $('#hidCodeArticulo').val() },
+                    success: function (result) {
+                        var ruta = '@Url.Action("SolicitudModificar", "SolCotizacion", new { strCodSolCotizacion = -1 })';
+                        ruta = ruta.replace('-1', $('#lblSolicitud').text());
+                        window.location.href = ruta;
+                    },
+                    error: function (ex) {
+                    }
+                });
+
+            } else {
+                console.log("Cancel!");
+            }
+        });
+
+        $("#btnCerrarModificar").click(function () {
+            var r = confirm("¿Esta seguro de Cerrar?");
+            if (r == true) {
+                window.location.href = '@Url.Action("SolicitudCotizacion", "SolCotizacion")';
+            } else {
+                console.log("Cancel!");
+            }
+        });
+    });
+
+    function SelectArticulo(obj) {
+        CodeArticulo = obj.value;
+        console.log(CodeArticulo);
+        $('#hidCodeArticulo').val(CodeArticulo);
+    }
+
+</script>

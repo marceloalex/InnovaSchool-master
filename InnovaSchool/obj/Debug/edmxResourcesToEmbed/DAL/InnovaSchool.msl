@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="innovaModelStoreContainer" CdmEntityContainer="innovaEntities">
+    <EntitySetMapping Name="GD_Area">
+      <EntityTypeMapping TypeName="innovaModel.GD_Area">
+        <MappingFragment StoreEntitySet="GD_Area">
+          <ScalarProperty Name="DescArea" ColumnName="DescArea" />
+          <ScalarProperty Name="CodArea" ColumnName="CodArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Articulo">
+      <EntityTypeMapping TypeName="innovaModel.GD_Articulo">
+        <MappingFragment StoreEntitySet="GD_Articulo">
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+          <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Documento">
+      <EntityTypeMapping TypeName="innovaModel.GD_Documento">
+        <MappingFragment StoreEntitySet="GD_Documento">
+          <ScalarProperty Name="DescDocumento" ColumnName="DescDocumento" />
+          <ScalarProperty Name="CodDocumento" ColumnName="CodDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Empleado">
+      <EntityTypeMapping TypeName="innovaModel.GD_Empleado">
+        <MappingFragment StoreEntitySet="GD_Empleado">
+          <ScalarProperty Name="CodArea" ColumnName="CodArea" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ApeMaterno" ColumnName="ApeMaterno" />
+          <ScalarProperty Name="ApePaterno" ColumnName="ApePaterno" />
+          <ScalarProperty Name="NroDocumento" ColumnName="NroDocumento" />
+          <ScalarProperty Name="CodDocumento" ColumnName="CodDocumento" />
+          <ScalarProperty Name="CodEmpleado" ColumnName="CodEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Estado">
+      <EntityTypeMapping TypeName="innovaModel.GD_Estado">
+        <MappingFragment StoreEntitySet="GD_Estado">
+          <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Proveedor">
+      <EntityTypeMapping TypeName="innovaModel.GD_Proveedor">
+        <MappingFragment StoreEntitySet="GD_Proveedor">
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_ProveedorArticulo">
+      <EntityTypeMapping TypeName="innovaModel.GD_ProveedorArticulo">
+        <MappingFragment StoreEntitySet="GD_ProveedorArticulo">
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_SolAdquisicion">
+      <EntityTypeMapping TypeName="innovaModel.GD_SolAdquisicion">
+        <MappingFragment StoreEntitySet="GD_SolAdquisicion">
+          <ScalarProperty Name="NroInforme" ColumnName="NroInforme" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="CodSolicitante" ColumnName="CodSolicitante" />
+          <ScalarProperty Name="CodEmpleado" ColumnName="CodEmpleado" />
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_SolAdquisicionDet">
+      <EntityTypeMapping TypeName="innovaModel.GD_SolAdquisicionDet">
+        <MappingFragment StoreEntitySet="GD_SolAdquisicionDet">
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+          <ScalarProperty Name="CodSolAdquisicionDet" ColumnName="CodSolAdquisicionDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_UnidadMedida">
+      <EntityTypeMapping TypeName="innovaModel.GD_UnidadMedida">
+        <MappingFragment StoreEntitySet="GD_UnidadMedida">
+          <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+          <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_SolCotizacion">
+      <EntityTypeMapping TypeName="innovaModel.GD_SolCotizacion">
+        <MappingFragment StoreEntitySet="GD_SolCotizacion">
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+          <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+          <ScalarProperty Name="FechaCotizacion" ColumnName="FechaCotizacion" />
+          <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_SolCotizacionDet">
+      <EntityTypeMapping TypeName="innovaModel.GD_SolCotizacionDet">
+        <MappingFragment StoreEntitySet="GD_SolCotizacionDet">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+          <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ActualizarCotizacion" FunctionName="innovaModel.Store.sp_ActualizarCotizacion" />
+    <FunctionImportMapping FunctionImportName="sp_BuscarArticulos_SolAdquisicion" FunctionName="innovaModel.Store.sp_BuscarArticulos_SolAdquisicion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="innovaModel.sp_BuscarArticulos_SolAdquisicion_Result">
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+          <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ConsultarCotizacion" FunctionName="innovaModel.Store.sp_ConsultarCotizacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="innovaModel.sp_ConsultarCotizacion_Result">
+          <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+          <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+          <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+          <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_EliminarArticuloSolCotizacion" FunctionName="innovaModel.Store.sp_EliminarArticuloSolCotizacion" />
+    <FunctionImportMapping FunctionImportName="sp_EliminarCotizacion" FunctionName="innovaModel.Store.sp_EliminarCotizacion" />
+    <FunctionImportMapping FunctionImportName="sp_GrabarCabSolCotizacion" FunctionName="innovaModel.Store.sp_GrabarCabSolCotizacion" />
+    <FunctionImportMapping FunctionImportName="sp_GrabarDetSolCotizacion" FunctionName="innovaModel.Store.sp_GrabarDetSolCotizacion" />
+    <FunctionImportMapping FunctionImportName="sp_ListaCotizaciones" FunctionName="innovaModel.Store.sp_ListaCotizaciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="innovaModel.sp_ListaCotizaciones_Result">
+          <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+          <ScalarProperty Name="FechaCotizacion" ColumnName="FechaCotizacion" />
+          <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+          <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+          <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ObetenerEstadoCotizacion" FunctionName="innovaModel.Store.sp_ObetenerEstadoCotizacion" />
+  </EntityContainerMapping>
+</Mapping>

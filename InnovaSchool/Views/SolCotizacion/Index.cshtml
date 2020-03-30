@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "SolicitudCotizacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divContenedor">
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#divContenedor").load('@Url.Action("SolicitudCotizacion", "SolCotizacion")');
+    });
+</script>

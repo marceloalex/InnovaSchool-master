@@ -1,0 +1,28 @@
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\InnovaSchool.Tests.dll.config
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\InnovaSchool.Tests.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\InnovaSchool.Tests.pdb
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\InnovaSchool.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\InnovaSchool.pdb
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.dll
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.pdb
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool.Tests\obj\Debug\InnovaSchool.Tests.pdb

@@ -1,0 +1,32 @@
+﻿@using InnovaSchool.Models;
+@{
+    Layout = null;
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo Articulo</th>
+            <th>Descripcion</th>
+            <th>Marca</th>
+            <th>Proveedor</th>
+            <th>Unidad de Medida</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (GD_Articulos item in ViewBag.ListArticulos)
+        {
+            <tr>
+                <td>@item.CodigoArticulo</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Marca</td>
+                <td>@item.Proveedor</td>
+                <td>@item.UnidadMedida</td>
+                <td>@item.Cantidad</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

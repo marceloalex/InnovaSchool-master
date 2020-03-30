@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="innovaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GD_Area">
+          <Key>
+            <PropertyRef Name="CodArea" />
+          </Key>
+          <Property Name="CodArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DescArea" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="GD_Articulo">
+          <Key>
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DescArticulo" Type="varchar" MaxLength="25" />
+          <Property Name="CodUniMedida" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" />
+          <Property Name="Marca" Type="varchar" MaxLength="50" />
+          <Property Name="Observacion" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="GD_Documento">
+          <Key>
+            <PropertyRef Name="CodDocumento" />
+          </Key>
+          <Property Name="CodDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DescDocumento" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="GD_Empleado">
+          <Key>
+            <PropertyRef Name="CodEmpleado" />
+          </Key>
+          <Property Name="CodEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodDocumento" Type="int" Nullable="false" />
+          <Property Name="NroDocumento" Type="varchar" MaxLength="25" />
+          <Property Name="ApePaterno" Type="varchar" MaxLength="50" />
+          <Property Name="ApeMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" MaxLength="50" />
+          <Property Name="CodArea" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GD_Estado">
+          <Key>
+            <PropertyRef Name="CodEstado" />
+          </Key>
+          <Property Name="CodEstado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DescEstado" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="GD_Proveedor">
+          <Key>
+            <PropertyRef Name="CodProveedor" />
+          </Key>
+          <Property Name="CodProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
+          <Property Name="Ruc" Type="nvarchar" MaxLength="11" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GD_ProveedorArticulo">
+          <Key>
+            <PropertyRef Name="CodProveedor" />
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodProveedor" Type="int" Nullable="false" />
+          <Property Name="CodArticulo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GD_SolAdquisicion">
+          <Key>
+            <PropertyRef Name="CodSolAdquisicion" />
+          </Key>
+          <Property Name="CodSolAdquisicion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+          <Property Name="CodEstado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CodEmpleado" Type="int" Nullable="false" />
+          <Property Name="CodSolicitante" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="varchar" MaxLength="200" />
+          <Property Name="NroInforme" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="GD_SolAdquisicionDet">
+          <Key>
+            <PropertyRef Name="CodSolAdquisicionDet" />
+            <PropertyRef Name="CodSolAdquisicion" />
+          </Key>
+          <Property Name="CodSolAdquisicionDet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodSolAdquisicion" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="CodProveedor" Type="int" Nullable="false" />
+          <Property Name="CodArticulo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GD_SolCotizacion">
+          <Key>
+            <PropertyRef Name="CodSolCotizacion" />
+          </Key>
+          <Property Name="CodSolCotizacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaCotizacion" Type="datetime" />
+          <Property Name="CodSolAdquisicion" Type="int" />
+          <Property Name="CodProveedor" Type="int" />
+          <Property Name="CodEstado" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="GD_SolCotizacionDet">
+          <Key>
+            <PropertyRef Name="CodSolCotizacion" />
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodSolCotizacion" Type="int" Nullable="false" />
+          <Property Name="CodArticulo" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="GD_UnidadMedida">
+          <Key>
+            <PropertyRef Name="CodUniMedida" />
+          </Key>
+          <Property Name="CodUniMedida" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="DescUniMedida" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <Association Name="FK__GD_SolCot__CodAr__004002F9">
+          <End Role="GD_Articulo" Type="Self.GD_Articulo" Multiplicity="1" />
+          <End Role="GD_SolCotizacionDet" Type="Self.GD_SolCotizacionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Articulo">
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacionDet">
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GD_SolCot__CodSo__7C6F7215">
+          <End Role="GD_SolAdquisicion" Type="Self.GD_SolAdquisicion" Multiplicity="0..1" />
+          <End Role="GD_SolCotizacion" Type="Self.GD_SolCotizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GD_SolCot__CodSo__7F4BDEC0">
+          <End Role="GD_SolCotizacion" Type="Self.GD_SolCotizacion" Multiplicity="1" />
+          <End Role="GD_SolCotizacionDet" Type="Self.GD_SolCotizacionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolCotizacion">
+              <PropertyRef Name="CodSolCotizacion" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacionDet">
+              <PropertyRef Name="CodSolCotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Area">
+          <End Role="GD_Area" Type="Self.GD_Area" Multiplicity="1" />
+          <End Role="GD_Empleado" Type="Self.GD_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Area">
+              <PropertyRef Name="CodArea" />
+            </Principal>
+            <Dependent Role="GD_Empleado">
+              <PropertyRef Name="CodArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Articulo">
+          <End Role="GD_Articulo" Type="Self.GD_Articulo" Multiplicity="1" />
+          <End Role="GD_ProveedorArticulo" Type="Self.GD_ProveedorArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Articulo">
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Documento">
+          <End Role="GD_Documento" Type="Self.GD_Documento" Multiplicity="1" />
+          <End Role="GD_Empleado" Type="Self.GD_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Documento">
+              <PropertyRef Name="CodDocumento" />
+            </Principal>
+            <Dependent Role="GD_Empleado">
+              <PropertyRef Name="CodDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Empleado">
+          <End Role="GD_Empleado" Type="Self.GD_Empleado" Multiplicity="1" />
+          <End Role="GD_SolAdquisicion" Type="Self.GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Empleado">
+              <PropertyRef Name="CodEmpleado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estado">
+          <End Role="GD_Estado" Type="Self.GD_Estado" Multiplicity="1" />
+          <End Role="GD_SolAdquisicion" Type="Self.GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Estado">
+              <PropertyRef Name="CodEstado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Proveedor">
+          <End Role="GD_Proveedor" Type="Self.GD_Proveedor" Multiplicity="1" />
+          <End Role="GD_ProveedorArticulo" Type="Self.GD_ProveedorArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Proveedor">
+              <PropertyRef Name="CodProveedor" />
+            </Principal>
+            <Dependent Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ProveedorArticulo">
+          <End Role="GD_ProveedorArticulo" Type="Self.GD_ProveedorArticulo" Multiplicity="1" />
+          <End Role="GD_SolAdquisicionDet" Type="Self.GD_SolAdquisicionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodProveedor" />
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicionDet">
+              <PropertyRef Name="CodProveedor" />
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SolAdquisicion">
+          <End Role="GD_SolAdquisicion" Type="Self.GD_SolAdquisicion" Multiplicity="1" />
+          <End Role="GD_SolAdquisicionDet" Type="Self.GD_SolAdquisicionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicionDet">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Solicitante">
+          <End Role="GD_Empleado" Type="Self.GD_Empleado" Multiplicity="1" />
+          <End Role="GD_SolAdquisicion" Type="Self.GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Empleado">
+              <PropertyRef Name="CodEmpleado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolicitante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UnidadMedida">
+          <End Role="GD_UnidadMedida" Type="Self.GD_UnidadMedida" Multiplicity="1" />
+          <End Role="GD_Articulo" Type="Self.GD_Articulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_UnidadMedida">
+              <PropertyRef Name="CodUniMedida" />
+            </Principal>
+            <Dependent Role="GD_Articulo">
+              <PropertyRef Name="CodUniMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_ActualizarCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_BuscarArticulos_SolAdquisicion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolAdquisicion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ConsultarCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_EliminarArticuloSolCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+          <Parameter Name="CodArticulo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_EliminarCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GrabarCabSolCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolAdquisicion" Type="int" Mode="In" />
+          <Parameter Name="CodProveedor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GrabarDetSolCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+          <Parameter Name="CodSolAdquisicion" Type="int" Mode="In" />
+          <Parameter Name="CodProveedor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ListaCotizaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_ObetenerEstadoCotizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CodSolCotizacion" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="innovaModelStoreContainer">
+          <EntitySet Name="GD_Area" EntityType="Self.GD_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_Articulo" EntityType="Self.GD_Articulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_Documento" EntityType="Self.GD_Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_Empleado" EntityType="Self.GD_Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_Estado" EntityType="Self.GD_Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_Proveedor" EntityType="Self.GD_Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_ProveedorArticulo" EntityType="Self.GD_ProveedorArticulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_SolAdquisicion" EntityType="Self.GD_SolAdquisicion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_SolAdquisicionDet" EntityType="Self.GD_SolAdquisicionDet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_SolCotizacion" EntityType="Self.GD_SolCotizacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_SolCotizacionDet" EntityType="Self.GD_SolCotizacionDet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_UnidadMedida" EntityType="Self.GD_UnidadMedida" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__GD_SolCot__CodAr__004002F9" Association="Self.FK__GD_SolCot__CodAr__004002F9">
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+            <End Role="GD_SolCotizacionDet" EntitySet="GD_SolCotizacionDet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GD_SolCot__CodSo__7C6F7215" Association="Self.FK__GD_SolCot__CodSo__7C6F7215">
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+            <End Role="GD_SolCotizacion" EntitySet="GD_SolCotizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GD_SolCot__CodSo__7F4BDEC0" Association="Self.FK__GD_SolCot__CodSo__7F4BDEC0">
+            <End Role="GD_SolCotizacion" EntitySet="GD_SolCotizacion" />
+            <End Role="GD_SolCotizacionDet" EntitySet="GD_SolCotizacionDet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Area" Association="Self.fk_Area">
+            <End Role="GD_Area" EntitySet="GD_Area" />
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Articulo" Association="Self.fk_Articulo">
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Documento" Association="Self.fk_Documento">
+            <End Role="GD_Documento" EntitySet="GD_Documento" />
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Empleado" Association="Self.fk_Empleado">
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estado" Association="Self.fk_Estado">
+            <End Role="GD_Estado" EntitySet="GD_Estado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Proveedor" Association="Self.fk_Proveedor">
+            <End Role="GD_Proveedor" EntitySet="GD_Proveedor" />
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ProveedorArticulo" Association="Self.fk_ProveedorArticulo">
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+            <End Role="GD_SolAdquisicionDet" EntitySet="GD_SolAdquisicionDet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SolAdquisicion" Association="Self.fk_SolAdquisicion">
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+            <End Role="GD_SolAdquisicionDet" EntitySet="GD_SolAdquisicionDet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Solicitante" Association="Self.fk_Solicitante">
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UnidadMedida" Association="Self.fk_UnidadMedida">
+            <End Role="GD_UnidadMedida" EntitySet="GD_UnidadMedida" />
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="innovaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="innovaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GD_Area" EntityType="innovaModel.GD_Area" />
+          <EntitySet Name="GD_Articulo" EntityType="innovaModel.GD_Articulo" />
+          <EntitySet Name="GD_Documento" EntityType="innovaModel.GD_Documento" />
+          <EntitySet Name="GD_Empleado" EntityType="innovaModel.GD_Empleado" />
+          <EntitySet Name="GD_Estado" EntityType="innovaModel.GD_Estado" />
+          <EntitySet Name="GD_Proveedor" EntityType="innovaModel.GD_Proveedor" />
+          <EntitySet Name="GD_ProveedorArticulo" EntityType="innovaModel.GD_ProveedorArticulo" />
+          <EntitySet Name="GD_SolAdquisicion" EntityType="innovaModel.GD_SolAdquisicion" />
+          <EntitySet Name="GD_SolAdquisicionDet" EntityType="innovaModel.GD_SolAdquisicionDet" />
+          <EntitySet Name="GD_UnidadMedida" EntityType="innovaModel.GD_UnidadMedida" />
+          <AssociationSet Name="fk_Area" Association="innovaModel.fk_Area">
+            <End Role="GD_Area" EntitySet="GD_Area" />
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Articulo" Association="innovaModel.fk_Articulo">
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UnidadMedida" Association="innovaModel.fk_UnidadMedida">
+            <End Role="GD_UnidadMedida" EntitySet="GD_UnidadMedida" />
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Documento" Association="innovaModel.fk_Documento">
+            <End Role="GD_Documento" EntitySet="GD_Documento" />
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Empleado" Association="innovaModel.fk_Empleado">
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Solicitante" Association="innovaModel.fk_Solicitante">
+            <End Role="GD_Empleado" EntitySet="GD_Empleado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estado" Association="innovaModel.fk_Estado">
+            <End Role="GD_Estado" EntitySet="GD_Estado" />
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Proveedor" Association="innovaModel.fk_Proveedor">
+            <End Role="GD_Proveedor" EntitySet="GD_Proveedor" />
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ProveedorArticulo" Association="innovaModel.fk_ProveedorArticulo">
+            <End Role="GD_ProveedorArticulo" EntitySet="GD_ProveedorArticulo" />
+            <End Role="GD_SolAdquisicionDet" EntitySet="GD_SolAdquisicionDet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SolAdquisicion" Association="innovaModel.fk_SolAdquisicion">
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+            <End Role="GD_SolAdquisicionDet" EntitySet="GD_SolAdquisicionDet" />
+          </AssociationSet>
+          <EntitySet Name="GD_SolCotizacion" EntityType="innovaModel.GD_SolCotizacion" />
+          <EntitySet Name="GD_SolCotizacionDet" EntityType="innovaModel.GD_SolCotizacionDet" />
+          <AssociationSet Name="FK__GD_SolCot__CodAr__004002F9" Association="innovaModel.FK__GD_SolCot__CodAr__004002F9">
+            <End Role="GD_Articulo" EntitySet="GD_Articulo" />
+            <End Role="GD_SolCotizacionDet" EntitySet="GD_SolCotizacionDet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GD_SolCot__CodSo__7C6F7215" Association="innovaModel.FK__GD_SolCot__CodSo__7C6F7215">
+            <End Role="GD_SolAdquisicion" EntitySet="GD_SolAdquisicion" />
+            <End Role="GD_SolCotizacion" EntitySet="GD_SolCotizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GD_SolCot__CodSo__7F4BDEC0" Association="innovaModel.FK__GD_SolCot__CodSo__7F4BDEC0">
+            <End Role="GD_SolCotizacion" EntitySet="GD_SolCotizacion" />
+            <End Role="GD_SolCotizacionDet" EntitySet="GD_SolCotizacionDet" />
+          </AssociationSet>
+          <FunctionImport Name="sp_ActualizarCotizacion">
+          <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_BuscarArticulos_SolAdquisicion" ReturnType="Collection(innovaModel.sp_BuscarArticulos_SolAdquisicion_Result)">
+          <Parameter Name="CodSolAdquisicion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ConsultarCotizacion" ReturnType="Collection(innovaModel.sp_ConsultarCotizacion_Result)">
+          <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EliminarArticuloSolCotizacion" ReturnType="Collection(String)">
+            <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+            <Parameter Name="CodArticulo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EliminarCotizacion">
+          <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GrabarCabSolCotizacion" ReturnType="Collection(Decimal)">
+            <Parameter Name="CodSolAdquisicion" Mode="In" Type="Int32" />
+            <Parameter Name="CodProveedor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GrabarDetSolCotizacion" ReturnType="Collection(String)">
+            <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+            <Parameter Name="CodSolAdquisicion" Mode="In" Type="Int32" />
+            <Parameter Name="CodProveedor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ListaCotizaciones" ReturnType="Collection(innovaModel.sp_ListaCotizaciones_Result)" />
+          <FunctionImport Name="sp_ObetenerEstadoCotizacion" ReturnType="Collection(String)">
+          <Parameter Name="CodSolCotizacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="GD_Area">
+          <Key>
+            <PropertyRef Name="CodArea" />
+          </Key>
+          <Property Name="CodArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescArea" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_Empleado" Relationship="innovaModel.fk_Area" FromRole="GD_Area" ToRole="GD_Empleado" />
+        </EntityType>
+        <EntityType Name="GD_Articulo">
+          <Key>
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodArticulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescArticulo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CodUniMedida" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_ProveedorArticulo" Relationship="innovaModel.fk_Articulo" FromRole="GD_Articulo" ToRole="GD_ProveedorArticulo" />
+          <NavigationProperty Name="GD_UnidadMedida" Relationship="innovaModel.fk_UnidadMedida" FromRole="GD_Articulo" ToRole="GD_UnidadMedida" />
+          <NavigationProperty Name="GD_SolCotizacionDet" Relationship="innovaModel.FK__GD_SolCot__CodAr__004002F9" FromRole="GD_Articulo" ToRole="GD_SolCotizacionDet" />
+        </EntityType>
+        <EntityType Name="GD_Documento">
+          <Key>
+            <PropertyRef Name="CodDocumento" />
+          </Key>
+          <Property Name="CodDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescDocumento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_Empleado" Relationship="innovaModel.fk_Documento" FromRole="GD_Documento" ToRole="GD_Empleado" />
+        </EntityType>
+        <EntityType Name="GD_Empleado">
+          <Key>
+            <PropertyRef Name="CodEmpleado" />
+          </Key>
+          <Property Name="CodEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodDocumento" Type="Int32" Nullable="false" />
+          <Property Name="NroDocumento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ApePaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApeMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodArea" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GD_Area" Relationship="innovaModel.fk_Area" FromRole="GD_Empleado" ToRole="GD_Area" />
+          <NavigationProperty Name="GD_Documento" Relationship="innovaModel.fk_Documento" FromRole="GD_Empleado" ToRole="GD_Documento" />
+          <NavigationProperty Name="GD_SolAdquisicion" Relationship="innovaModel.fk_Empleado" FromRole="GD_Empleado" ToRole="GD_SolAdquisicion" />
+          <NavigationProperty Name="GD_SolAdquisicion1" Relationship="innovaModel.fk_Solicitante" FromRole="GD_Empleado" ToRole="GD_SolAdquisicion" />
+        </EntityType>
+        <EntityType Name="GD_Estado">
+          <Key>
+            <PropertyRef Name="CodEstado" />
+          </Key>
+          <Property Name="CodEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DescEstado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_SolAdquisicion" Relationship="innovaModel.fk_Estado" FromRole="GD_Estado" ToRole="GD_SolAdquisicion" />
+        </EntityType>
+        <EntityType Name="GD_Proveedor">
+          <Key>
+            <PropertyRef Name="CodProveedor" />
+          </Key>
+          <Property Name="CodProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_ProveedorArticulo" Relationship="innovaModel.fk_Proveedor" FromRole="GD_Proveedor" ToRole="GD_ProveedorArticulo" />
+        </EntityType>
+        <EntityType Name="GD_ProveedorArticulo">
+          <Key>
+            <PropertyRef Name="CodProveedor" />
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodProveedor" Type="Int32" Nullable="false" />
+          <Property Name="CodArticulo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GD_Articulo" Relationship="innovaModel.fk_Articulo" FromRole="GD_ProveedorArticulo" ToRole="GD_Articulo" />
+          <NavigationProperty Name="GD_Proveedor" Relationship="innovaModel.fk_Proveedor" FromRole="GD_ProveedorArticulo" ToRole="GD_Proveedor" />
+          <NavigationProperty Name="GD_SolAdquisicionDet" Relationship="innovaModel.fk_ProveedorArticulo" FromRole="GD_ProveedorArticulo" ToRole="GD_SolAdquisicionDet" />
+        </EntityType>
+        <EntityType Name="GD_SolAdquisicion">
+          <Key>
+            <PropertyRef Name="CodSolAdquisicion" />
+          </Key>
+          <Property Name="CodSolAdquisicion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CodEstado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CodEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="CodSolicitante" Type="Int32" Nullable="false" />
+          <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NroInforme" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_Empleado" Relationship="innovaModel.fk_Empleado" FromRole="GD_SolAdquisicion" ToRole="GD_Empleado" />
+          <NavigationProperty Name="GD_Empleado1" Relationship="innovaModel.fk_Solicitante" FromRole="GD_SolAdquisicion" ToRole="GD_Empleado" />
+          <NavigationProperty Name="GD_Estado" Relationship="innovaModel.fk_Estado" FromRole="GD_SolAdquisicion" ToRole="GD_Estado" />
+          <NavigationProperty Name="GD_SolAdquisicionDet" Relationship="innovaModel.fk_SolAdquisicion" FromRole="GD_SolAdquisicion" ToRole="GD_SolAdquisicionDet" />
+          <NavigationProperty Name="GD_SolCotizacion" Relationship="innovaModel.FK__GD_SolCot__CodSo__7C6F7215" FromRole="GD_SolAdquisicion" ToRole="GD_SolCotizacion" />
+        </EntityType>
+        <EntityType Name="GD_SolAdquisicionDet">
+          <Key>
+            <PropertyRef Name="CodSolAdquisicionDet" />
+            <PropertyRef Name="CodSolAdquisicion" />
+          </Key>
+          <Property Name="CodSolAdquisicionDet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodSolAdquisicion" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="CodProveedor" Type="Int32" Nullable="false" />
+          <Property Name="CodArticulo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GD_ProveedorArticulo" Relationship="innovaModel.fk_ProveedorArticulo" FromRole="GD_SolAdquisicionDet" ToRole="GD_ProveedorArticulo" />
+          <NavigationProperty Name="GD_SolAdquisicion" Relationship="innovaModel.fk_SolAdquisicion" FromRole="GD_SolAdquisicionDet" ToRole="GD_SolAdquisicion" />
+        </EntityType>
+        <EntityType Name="GD_UnidadMedida">
+          <Key>
+            <PropertyRef Name="CodUniMedida" />
+          </Key>
+          <Property Name="CodUniMedida" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DescUniMedida" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GD_Articulo" Relationship="innovaModel.fk_UnidadMedida" FromRole="GD_UnidadMedida" ToRole="GD_Articulo" />
+        </EntityType>
+        <Association Name="fk_Area">
+          <End Type="innovaModel.GD_Area" Role="GD_Area" Multiplicity="1" />
+          <End Type="innovaModel.GD_Empleado" Role="GD_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Area">
+              <PropertyRef Name="CodArea" />
+            </Principal>
+            <Dependent Role="GD_Empleado">
+              <PropertyRef Name="CodArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Articulo">
+          <End Type="innovaModel.GD_Articulo" Role="GD_Articulo" Multiplicity="1" />
+          <End Type="innovaModel.GD_ProveedorArticulo" Role="GD_ProveedorArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Articulo">
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UnidadMedida">
+          <End Type="innovaModel.GD_UnidadMedida" Role="GD_UnidadMedida" Multiplicity="1" />
+          <End Type="innovaModel.GD_Articulo" Role="GD_Articulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_UnidadMedida">
+              <PropertyRef Name="CodUniMedida" />
+            </Principal>
+            <Dependent Role="GD_Articulo">
+              <PropertyRef Name="CodUniMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Documento">
+          <End Type="innovaModel.GD_Documento" Role="GD_Documento" Multiplicity="1" />
+          <End Type="innovaModel.GD_Empleado" Role="GD_Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Documento">
+              <PropertyRef Name="CodDocumento" />
+            </Principal>
+            <Dependent Role="GD_Empleado">
+              <PropertyRef Name="CodDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Empleado">
+          <End Type="innovaModel.GD_Empleado" Role="GD_Empleado" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolAdquisicion" Role="GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Empleado">
+              <PropertyRef Name="CodEmpleado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Solicitante">
+          <End Type="innovaModel.GD_Empleado" Role="GD_Empleado" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolAdquisicion" Role="GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Empleado">
+              <PropertyRef Name="CodEmpleado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolicitante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estado">
+          <End Type="innovaModel.GD_Estado" Role="GD_Estado" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolAdquisicion" Role="GD_SolAdquisicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Estado">
+              <PropertyRef Name="CodEstado" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Proveedor">
+          <End Type="innovaModel.GD_Proveedor" Role="GD_Proveedor" Multiplicity="1" />
+          <End Type="innovaModel.GD_ProveedorArticulo" Role="GD_ProveedorArticulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Proveedor">
+              <PropertyRef Name="CodProveedor" />
+            </Principal>
+            <Dependent Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ProveedorArticulo">
+          <End Type="innovaModel.GD_ProveedorArticulo" Role="GD_ProveedorArticulo" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolAdquisicionDet" Role="GD_SolAdquisicionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_ProveedorArticulo">
+              <PropertyRef Name="CodProveedor" />
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicionDet">
+              <PropertyRef Name="CodProveedor" />
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SolAdquisicion">
+          <End Type="innovaModel.GD_SolAdquisicion" Role="GD_SolAdquisicion" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolAdquisicionDet" Role="GD_SolAdquisicionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Principal>
+            <Dependent Role="GD_SolAdquisicionDet">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GD_SolCotizacion">
+          <Key>
+            <PropertyRef Name="CodSolCotizacion" />
+          </Key>
+          <Property Name="CodSolCotizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCotizacion" Type="DateTime" Precision="3" />
+          <Property Name="CodSolAdquisicion" Type="Int32" />
+          <Property Name="CodProveedor" Type="Int32" />
+          <Property Name="CodEstado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GD_SolAdquisicion" Relationship="innovaModel.FK__GD_SolCot__CodSo__7C6F7215" FromRole="GD_SolCotizacion" ToRole="GD_SolAdquisicion" />
+          <NavigationProperty Name="GD_SolCotizacionDet" Relationship="innovaModel.FK__GD_SolCot__CodSo__7F4BDEC0" FromRole="GD_SolCotizacion" ToRole="GD_SolCotizacionDet" />
+        </EntityType>
+        <EntityType Name="GD_SolCotizacionDet">
+          <Key>
+            <PropertyRef Name="CodSolCotizacion" />
+            <PropertyRef Name="CodArticulo" />
+          </Key>
+          <Property Name="CodSolCotizacion" Type="Int32" Nullable="false" />
+          <Property Name="CodArticulo" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <NavigationProperty Name="GD_Articulo" Relationship="innovaModel.FK__GD_SolCot__CodAr__004002F9" FromRole="GD_SolCotizacionDet" ToRole="GD_Articulo" />
+          <NavigationProperty Name="GD_SolCotizacion" Relationship="innovaModel.FK__GD_SolCot__CodSo__7F4BDEC0" FromRole="GD_SolCotizacionDet" ToRole="GD_SolCotizacion" />
+        </EntityType>
+        <Association Name="FK__GD_SolCot__CodAr__004002F9">
+          <End Type="innovaModel.GD_Articulo" Role="GD_Articulo" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolCotizacionDet" Role="GD_SolCotizacionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_Articulo">
+              <PropertyRef Name="CodArticulo" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacionDet">
+              <PropertyRef Name="CodArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GD_SolCot__CodSo__7C6F7215">
+          <End Type="innovaModel.GD_SolAdquisicion" Role="GD_SolAdquisicion" Multiplicity="0..1" />
+          <End Type="innovaModel.GD_SolCotizacion" Role="GD_SolCotizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolAdquisicion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacion">
+              <PropertyRef Name="CodSolAdquisicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GD_SolCot__CodSo__7F4BDEC0">
+          <End Type="innovaModel.GD_SolCotizacion" Role="GD_SolCotizacion" Multiplicity="1" />
+          <End Type="innovaModel.GD_SolCotizacionDet" Role="GD_SolCotizacionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_SolCotizacion">
+              <PropertyRef Name="CodSolCotizacion" />
+            </Principal>
+            <Dependent Role="GD_SolCotizacionDet">
+              <PropertyRef Name="CodSolCotizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_BuscarArticulos_SolAdquisicion_Result">
+          <Property Type="Int32" Name="CodArticulo" Nullable="false" />
+          <Property Type="Int32" Name="CodProveedor" Nullable="false" />
+          <Property Type="String" Name="DescArticulo" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Marca" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CodUniMedida" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="String" Name="DescUniMedida" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_ConsultarCotizacion_Result">
+          <Property Type="Int32" Name="CodSolCotizacion" Nullable="false" />
+          <Property Type="Int32" Name="CodSolAdquisicion" Nullable="true" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CodProveedor" Nullable="true" />
+          <Property Type="Int32" Name="CodArticulo" Nullable="false" />
+          <Property Type="String" Name="DescArticulo" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Marca" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="String" Name="DescUniMedida" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="sp_ListaCotizaciones_Result">
+          <Property Type="Int32" Name="CodSolCotizacion" Nullable="false" />
+          <Property Type="DateTime" Name="FechaCotizacion" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CodSolAdquisicion" Nullable="true" />
+          <Property Type="Int32" Name="CodProveedor" Nullable="true" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CodEstado" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="DescEstado" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="innovaModelStoreContainer" CdmEntityContainer="innovaEntities">
+          <EntitySetMapping Name="GD_Area">
+            <EntityTypeMapping TypeName="innovaModel.GD_Area">
+              <MappingFragment StoreEntitySet="GD_Area">
+                <ScalarProperty Name="DescArea" ColumnName="DescArea" />
+                <ScalarProperty Name="CodArea" ColumnName="CodArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_Articulo">
+            <EntityTypeMapping TypeName="innovaModel.GD_Articulo">
+              <MappingFragment StoreEntitySet="GD_Articulo">
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+                <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_Documento">
+            <EntityTypeMapping TypeName="innovaModel.GD_Documento">
+              <MappingFragment StoreEntitySet="GD_Documento">
+                <ScalarProperty Name="DescDocumento" ColumnName="DescDocumento" />
+                <ScalarProperty Name="CodDocumento" ColumnName="CodDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_Empleado">
+            <EntityTypeMapping TypeName="innovaModel.GD_Empleado">
+              <MappingFragment StoreEntitySet="GD_Empleado">
+                <ScalarProperty Name="CodArea" ColumnName="CodArea" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="ApeMaterno" ColumnName="ApeMaterno" />
+                <ScalarProperty Name="ApePaterno" ColumnName="ApePaterno" />
+                <ScalarProperty Name="NroDocumento" ColumnName="NroDocumento" />
+                <ScalarProperty Name="CodDocumento" ColumnName="CodDocumento" />
+                <ScalarProperty Name="CodEmpleado" ColumnName="CodEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_Estado">
+            <EntityTypeMapping TypeName="innovaModel.GD_Estado">
+              <MappingFragment StoreEntitySet="GD_Estado">
+                <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_Proveedor">
+            <EntityTypeMapping TypeName="innovaModel.GD_Proveedor">
+              <MappingFragment StoreEntitySet="GD_Proveedor">
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_ProveedorArticulo">
+            <EntityTypeMapping TypeName="innovaModel.GD_ProveedorArticulo">
+              <MappingFragment StoreEntitySet="GD_ProveedorArticulo">
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_SolAdquisicion">
+            <EntityTypeMapping TypeName="innovaModel.GD_SolAdquisicion">
+              <MappingFragment StoreEntitySet="GD_SolAdquisicion">
+                <ScalarProperty Name="NroInforme" ColumnName="NroInforme" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="CodSolicitante" ColumnName="CodSolicitante" />
+                <ScalarProperty Name="CodEmpleado" ColumnName="CodEmpleado" />
+                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_SolAdquisicionDet">
+            <EntityTypeMapping TypeName="innovaModel.GD_SolAdquisicionDet">
+              <MappingFragment StoreEntitySet="GD_SolAdquisicionDet">
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+                <ScalarProperty Name="CodSolAdquisicionDet" ColumnName="CodSolAdquisicionDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_UnidadMedida">
+            <EntityTypeMapping TypeName="innovaModel.GD_UnidadMedida">
+              <MappingFragment StoreEntitySet="GD_UnidadMedida">
+                <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+                <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_SolCotizacion">
+            <EntityTypeMapping TypeName="innovaModel.GD_SolCotizacion">
+              <MappingFragment StoreEntitySet="GD_SolCotizacion">
+                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+                <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+                <ScalarProperty Name="FechaCotizacion" ColumnName="FechaCotizacion" />
+                <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GD_SolCotizacionDet">
+            <EntityTypeMapping TypeName="innovaModel.GD_SolCotizacionDet">
+              <MappingFragment StoreEntitySet="GD_SolCotizacionDet">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+                <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_ActualizarCotizacion" FunctionName="innovaModel.Store.sp_ActualizarCotizacion" />
+          <FunctionImportMapping FunctionImportName="sp_BuscarArticulos_SolAdquisicion" FunctionName="innovaModel.Store.sp_BuscarArticulos_SolAdquisicion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="innovaModel.sp_BuscarArticulos_SolAdquisicion_Result">
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+                <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="CodUniMedida" ColumnName="CodUniMedida" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_ConsultarCotizacion" FunctionName="innovaModel.Store.sp_ConsultarCotizacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="innovaModel.sp_ConsultarCotizacion_Result">
+                <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+                <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+                <ScalarProperty Name="CodArticulo" ColumnName="CodArticulo" />
+                <ScalarProperty Name="DescArticulo" ColumnName="DescArticulo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="DescUniMedida" ColumnName="DescUniMedida" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_EliminarArticuloSolCotizacion" FunctionName="innovaModel.Store.sp_EliminarArticuloSolCotizacion" />
+          <FunctionImportMapping FunctionImportName="sp_EliminarCotizacion" FunctionName="innovaModel.Store.sp_EliminarCotizacion" />
+          <FunctionImportMapping FunctionImportName="sp_GrabarCabSolCotizacion" FunctionName="innovaModel.Store.sp_GrabarCabSolCotizacion" />
+          <FunctionImportMapping FunctionImportName="sp_GrabarDetSolCotizacion" FunctionName="innovaModel.Store.sp_GrabarDetSolCotizacion" />
+          <FunctionImportMapping FunctionImportName="sp_ListaCotizaciones" FunctionName="innovaModel.Store.sp_ListaCotizaciones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="innovaModel.sp_ListaCotizaciones_Result">
+                <ScalarProperty Name="CodSolCotizacion" ColumnName="CodSolCotizacion" />
+                <ScalarProperty Name="FechaCotizacion" ColumnName="FechaCotizacion" />
+                <ScalarProperty Name="CodSolAdquisicion" ColumnName="CodSolAdquisicion" />
+                <ScalarProperty Name="CodProveedor" ColumnName="CodProveedor" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+                <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_ObetenerEstadoCotizacion" FunctionName="innovaModel.Store.sp_ObetenerEstadoCotizacion" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,60 @@
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\InnovaSchool.dll.config
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\InnovaSchool.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\InnovaSchool.pdb
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\Antlr3.Runtime.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\Microsoft.Web.Infrastructure.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\Newtonsoft.Json.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Helpers.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Mvc.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Optimization.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Razor.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Deployment.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Razor.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\WebGrease.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Helpers.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Mvc.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Optimization.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.Razor.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Deployment.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Razor.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\Antlr3.Runtime.pdb
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\bin\Newtonsoft.Json.xml
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.dll
+c:\users\usuario\documents\visual studio 2013\Projects\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.pdb
+C:\Users\Usuario\Documents\Visual Studio 2013\Projects\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\InnovaSchool.dll.config
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\InnovaSchool.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\InnovaSchool.pdb
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\Antlr3.Runtime.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\Newtonsoft.Json.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Helpers.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Mvc.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Optimization.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Razor.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Razor.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\WebGrease.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Helpers.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Mvc.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Optimization.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.Razor.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\System.Web.WebPages.Razor.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\Antlr3.Runtime.pdb
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\Newtonsoft.Json.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.pdb
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\EntityFramework.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\EntityFramework.SqlServer.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\EntityFramework.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\EntityFramework.SqlServer.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\obj\Debug\InnovaSchool.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\PagedList.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\PagedList.Mvc.dll
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\PagedList.xml
+C:\Users\Usuario\Desktop\tp2\InnovaSchool\InnovaSchool\bin\PagedList.Mvc.xml

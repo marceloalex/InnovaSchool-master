@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7dbbf187e45b4e169b8858c5b319a933" Name="Diagram1">
+        <EntityTypeShape EntityType="innovaModel.GD_Area" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="innovaModel.GD_Articulo" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="innovaModel.GD_Documento" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="innovaModel.GD_Empleado" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="innovaModel.GD_Estado" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="innovaModel.GD_Proveedor" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="innovaModel.GD_ProveedorArticulo" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="innovaModel.GD_SolAdquisicion" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="innovaModel.GD_SolAdquisicionDet" Width="1.5" PointX="7.5" PointY="1.375" />
+        <EntityTypeShape EntityType="innovaModel.GD_UnidadMedida" Width="1.5" PointX="0.75" PointY="11.5" />
+        <AssociationConnector Association="innovaModel.fk_Area" />
+        <AssociationConnector Association="innovaModel.fk_Articulo" />
+        <AssociationConnector Association="innovaModel.fk_UnidadMedida" />
+        <AssociationConnector Association="innovaModel.fk_Documento" />
+        <AssociationConnector Association="innovaModel.fk_Empleado" />
+        <AssociationConnector Association="innovaModel.fk_Solicitante" />
+        <AssociationConnector Association="innovaModel.fk_Estado" />
+        <AssociationConnector Association="innovaModel.fk_Proveedor" />
+        <AssociationConnector Association="innovaModel.fk_ProveedorArticulo" />
+        <AssociationConnector Association="innovaModel.fk_SolAdquisicion" />
+        <EntityTypeShape EntityType="innovaModel.GD_SolCotizacion" Width="1.5" PointX="7.5" PointY="5.5" />
+        <EntityTypeShape EntityType="innovaModel.GD_SolCotizacionDet" Width="1.5" PointX="9.75" PointY="8.625" />
+        <AssociationConnector Association="innovaModel.FK__GD_SolCot__CodAr__004002F9" />
+        <AssociationConnector Association="innovaModel.FK__GD_SolCot__CodSo__7C6F7215" />
+        <AssociationConnector Association="innovaModel.FK__GD_SolCot__CodSo__7F4BDEC0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

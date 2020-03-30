@@ -1,0 +1,87 @@
+﻿@using InnovaSchool.Models;
+
+<div class="content-body">
+    <h2>Nueva Solicitud de Cotización.</h2>
+
+    <div>
+        <input type="number" maxlength="10" id="txtBuscarAdquisicion" />
+        <input type="button" value="Buscar" id="btnBuscarAdquisicion" />
+    </div>
+
+    <div id="divContentArticulos">
+
+    </div>
+
+    <div>
+        <input type="button" value="Grabar" id="btnGrabar" disabled />
+        <input type="button" value="Cerrar" id="btnCerrar" />
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnBuscarAdquisicion").click(function () {
+
+            if ($("#txtBuscarAdquisicion").val().length == 0) {
+                alert("es necesario ingresar un numero de adquisicion");
+            }
+            else {
+                var strUrl = '@Url.Action("BuscarArticulos", "SolCotizacion")';
+                $.ajax({
+                    type: 'GET',
+                    url: strUrl,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'html',
+                    cache: true,
+                    data: { strCodSolAdquisicion: $('#txtBuscarAdquisicion').val() },
+                    success: function (result) {
+                        $('div#divContentArticulos').html(result);
+                        $('#btnGrabar').attr('disabled', false);
+                    },
+                    error: function (ex) {
+                        console.log(ex);
+                        $('div#divContentArticulos').html('<div align="center"> Error al cargar los datos ... </div>');
+                    }
+                });
+            }
+        });
+
+
+
+        $("#btnGrabar").click(function () {
+            var r = confirm("¿Esta seguro de grabar?");
+            if (r == true) {
+
+                var strUrl = '@Url.Action("Grabar", "SolCotizacion")';
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: strUrl,
+                    data: { strCodSolAdquisicion: $('#txtBuscarAdquisicion').val() },
+                    success: function (result) {
+                        alert("Se registro correctamente");
+                        window.location.href = '@Url.Action("SolicitudCotizacion", "SolCotizacion")';
+                    },
+                    error: function (ex) {
+                    }
+                });
+
+            } else {
+                console.log("Cancel!");
+            }
+        });
+        $("#btnCerrar").click(function () {
+            var r = confirm("¿Esta seguro de Cerrar?");
+            if (r == true) {
+                window.location.href = '@Url.Action("SolicitudCotizacion", "SolCotizacion")';
+            } else {
+                console.log("Cancel!");
+            }
+        });
+
+
+
+    });
+</script>

@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>.:: @ViewBag.Title - Innova Schools ::.</title>
+
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Assets/js/jquery.js"></script>
+
+    @Styles.Render("~/Content/css/style.css")
+    @Styles.Render("~/Content/css/skin.css")
+    @Scripts.Render("~/Scripts/modernizr/modernizr.custom.js")
+    <!--[if lt IE 9]>
+        <script src="../Scripts/app/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="skin-gym bar-white">
+    <section class="wrap-ui">
+        <!--<header>-->
+        <header class="header">
+            <div class="pull-left">
+                <div class="logo-data">
+                    <img src="~/Content/images/system/innova_schools-logo.png" style="width:90px" />
+                </div>
+            </div>
+            <div class="pull-right">
+                <div class="pull-left comp-btn-user">
+                    <button id="btnGroupDrop2" type="button" class="btn">
+                        <span class="ico-user"></span>
+                        <span class="name">Juan Sanchez ....</span>
+                    </button>
+                </div>
+                <div class="pull-left">
+                    <a href="#" class="btn-salir"></a>
+                </div>
+            </div>
+        </header>
+        <!--</header>-->
+        <!-- nav -->
+        <div class="menu">
+            <a class="btn-show"></a>
+            <a class="logo" href="#">
+                <img src="../Content/images/system/innova_schools-logo.png" alt="Logo">
+            </a>
+            <nav class="nav">
+                <ul class="nav-wrap">
+                    <li class="nav-01">
+                        <span class="list-collapse">Comercial <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="home.html" class="nav_ajx">Home</a>
+                            </li>
+                            <li class="nav-02">
+                                <a href="cliente.html" class="nav_ajx">cliente</a>
+                            </li>
+                            <li class="nav-02">
+                                <a href="clientePaso1.html" class="nav_ajx">cliente Paso 01</a>
+                            </li>
+                            <li class="nav-02">
+                                <a href="clientePaso2.html" class="nav_ajx">cliente Paso 02</a>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Data imagenes</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03">
+                                        <a href="home.html" class="nav_ajx">Registro de OP</a>
+                                    </li>
+                                    <li class="nav-03">
+                                        <a href="cliente.html" class="nav_ajx">Registro de CEIC</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Requerimientos Add</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Producción <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">The were data after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Distribución <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Reclamos <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Reportes <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Administración <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Compras <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-03">@Html.ActionLink("Solicitud de Adquisición", "ConsultaAdquisicion", "SolAdquisicion")</li>
+                            <li class="nav-03">@Html.ActionLink("Solicitud de Cotización", "SolicitudCotizacion", "SolCotizacion")</li>
+                        </ul>
+                    </li>
+                    <li class="nav-01">
+                        <span class="list-collapse">Seguridad <i class="ico-collapse"></i></span>
+                        <ul class="nav-collapse">
+                            <li class="nav-02">
+                                <a href="#">Lorem impsum dolor</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Doted and after</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                    <li class="nav-03"><a href="#">Diego</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-02">
+                                <a href="#">Were before action</a>
+                                <ul class="nav-collapse-sub">
+                                    <li class="nav-03"><a href="#">Registro de OP</a></li>
+                                    <li class="nav-03"><a href="#">Registro de CEIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- cierra nav -->
+        <!--<wrap-content>-->
+        <div class="wrap-content">
+            <!--</main-aside>-->
+            <!--<pull-main-content>-->
+            <div class="pull-main-content">
+                <!--<main-content>-->
+                <div id="divContenedor" class="main-content view-wrap">
+                    @RenderBody()
+                </div>
+                <!--</main-content>-->
+                <div class="footer">
+                    <strong>&copy; UPC</strong> Todos los derechos reservados 2016
+                </div>
+            </div>
+            <!--</pull-main-content>-->
+        </div>
+        <!--</wrap-content>-->
+        <div class="up-page upPage"><span class="glyphicon glyphicon-chevron-up"></span></div>
+    </section>
+    <!--JS-->
+    @Scripts.Render("~/Scripts/jquery/jquery-1.11.1.js")
+    @Scripts.Render("~/Scripts/app/ajax.navegacion.js")
+    @Scripts.Render("~/Scripts/bootstrap-jquery-ui/js/bootstrap.js")
+    @Scripts.Render("~/Scripts/app/jquery.mCustomScrollbar.js")
+    @Scripts.Render("~/Scripts/app/common.js")
+    @Scripts.Render("~/Scripts/RenderReload.js")
+    @Scripts.Render("~/Scripts/jquery.maskedinput.min.js")
+    <!--<script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            generales();
+            removeMenuPanel();
+        });
+    </script>-->
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+    <!--<script src="~/Assets/js/jquery.validate.min.js"></script>
+    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>-->
+    <script src="~/Assets/js/jquery.form.min.js"></script>
+</body>
+</html>
